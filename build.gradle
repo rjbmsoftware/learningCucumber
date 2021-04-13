@@ -37,3 +37,22 @@ configurations {
         extendsFrom testImplementation
     }
 }
+
+cucumber.dependsOn("startApp")
+//test.finalizedBy("stopApp")
+
+def setupPath = [getProjectDir().toString(), 'src', 'main', 'setupApp.yaml'].join(File.separator)
+
+tasks.register("startApp") {
+    exec {
+        executable "docker-compose"
+        args "-f", setupPath, "up", "--detach"
+    }
+}
+
+tasks.register("stopApp") {
+    exec {
+        executable "docker-compose"
+        args "-f", setupPath, "down"
+    }
+}

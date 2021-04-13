@@ -16,8 +16,8 @@ public class Pet {
         // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
     }
-    @Then("response is {int}")
-    public void response_is(Integer int1) {
+    @Then("response is not found")
+    public void response_is() {
         // Write code here that turns the phrase above into concrete actions
 //        throw new io.cucumber.java.PendingException();
     }

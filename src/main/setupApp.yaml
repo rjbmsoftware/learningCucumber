@@ -1,0 +1,5 @@
+services:
+  petStoreApp:
+    image: swaggerapi/petstore3
+    ports:
+      - 80:8080
