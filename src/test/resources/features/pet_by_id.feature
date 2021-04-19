@@ -5,7 +5,7 @@ Feature: get pet information by id
     When user makes a request to GET by id
     Then response is not found
 
-  Scenario:
+  Scenario: valid request
     Given user has a valid pet id
     When user makes a request to GET by id
     Then response is success
