@@ -30,7 +30,12 @@ task cucumber() {
             main = "io.cucumber.core.cli.Main"
 //            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             classpath = configurations.cucumberRuntime + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'stepDefinitions', 'src/test/resources/features']
+//            args = ['--plugin', 'pretty', '--glue', 'stepDefinitions', 'src/test/resources/features']
+            args = [
+                    '--plugin', 'html:build/cucumber-reports.html',
+                    '--glue', 'stepDefinitions',
+                    'src/test/resources/features'
+            ]
         }
     }
 }
